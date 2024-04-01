@@ -5,12 +5,13 @@
         Console.BackgroundColor = ConsoleColor.Black;
         int xPos = 10;
         int yPos = 8;
-
+        Console.SetCursorPosition(85, 53);
+        Console.Write("Exit");
         while (true)
         {
+            Console.Clear();
             var x = Console.WindowWidth;
             var y = Console.WindowHeight;
-            Console.Clear();
             if (x > 120)
             {
                 Console.SetCursorPosition(120, 1);
@@ -19,12 +20,18 @@
             DrawRows(15, 75, 100);
             DrawColumns(25, 125, 60);
             DrawRabbit(xPos, yPos);
+            DrawExit();
             var key = Console.ReadKey();
             MoveRabbit(key.Key, ref xPos, ref yPos);
             Console.CursorVisible = false;
 
 
         }
+    }
+    public static void DrawExit()
+    {
+        Console.SetCursorPosition(85, 53);
+        Console.Write("Exit");
     }
     public static void DrawRabbit(int xPos, int yPos)
     {
